@@ -1602,13 +1602,6 @@ Quintus.GenerateMap = function(Q){
             
         },
         
-        removeFish: function(map, fish){
-            let objects = map.objects;
-            let objectsGrid = map.objectsGrid;
-            let ground2 = map.ground2;
-            ground2[fish.loc[1]][fish.loc[0]] = 0;
-            Q.DataController.removeObjectFromMap(fish, objects, objectsGrid);
-        },
         //Add or remove fish at every 30 minute interval in each chunk that has fish within this world.
         updateFishes: function(world){
             let stage = Q.stage(0);
@@ -1617,7 +1610,6 @@ Quintus.GenerateMap = function(Q){
             let chunks = world.chunks;
             
             let allFish = world.map.objects.filter(function(obj){return obj.animal === "Fish";});
-            
             for(let i = 0; i < chunks.length; i++){
                 let chunk = chunks[i];
                 let chunkData = Q.MapGen.getChunkData(chunk.type, chunk.idx);
@@ -1627,15 +1619,14 @@ Quintus.GenerateMap = function(Q){
                     let chunkFish = allFish.filter(function(fish){return Q.isWithinRange(fish, chunk);});
                     //TODO: come up with a logical number to remove.
                     let removeNum = 5;
-                    for(let j = 0; j < removeNum; j++){
-                        let randRemove = ~~(Math.random() * chunkFish.length);
-                        //Don't remove it if it's being fished right now.
-                        if(!chunkFish[randRemove].beingFished){
-                            Q.MapGen.removeFish(world.map, chunkFish[randRemove]);
-                            if(!playerInside){
-                                let globalLoc = chunkFish[randRemove].loc;
-                                Q.DataController.removeFromAnimatedTiles("fish", globalLoc);
-                                stage.lists.TileLayer[1].setTile(globalLoc[0], globalLoc[1], 0);
+                    if(chunkFish.length){
+                        for(let j = 0; j < removeNum; j++){
+                            let randRemove = ~~(Math.random() * chunkFish.length);
+                            //Don't remove it if it's being fished right now.
+                            if(!chunkFish[randRemove].beingFished){
+                                Q.DataController.removeObjectFromMap(chunkFish[randRemove], world.map.objects, world.map.objectsGrid);
+                                Q.DataController.removeFromAnimatedTiles("fish", chunkFish[randRemove].loc);
+                                Q.DataController.removeObjectFromTileLayers(chunkFish[randRemove], [stage.lists.TileLayer[1], stage.lists.TileLayer[2]]);
                             }
                         }
                     }
@@ -1704,7 +1695,7 @@ Quintus.GenerateMap = function(Q){
                 do {
                     randLocIdx = ~~(Math.random() * tiles.length);
                     times ++;
-                } while(times < 10 && objectsGrid[tiles[randLocIdx][1]][tiles[randLocIdx][0]]);
+                } while(times < 10 && objectsGrid[chunk.loc[1] + tiles[randLocIdx][1]][chunk.loc[0] + tiles[randLocIdx][0]]);
                 if(times < 10){
                     let fish = Object.assign({}, Q.MapGen.getRandomItemFromGrid(chanceArray, availableFish, allChances));
                     fish.loc = [chunk.loc[0] + tiles[randLocIdx][0], chunk.loc[1] + tiles[randLocIdx][1]];
@@ -1713,7 +1704,7 @@ Quintus.GenerateMap = function(Q){
                     //Add the fish to the objects array
                     objects.push(fish);
                     //Add the fish to the objects grid
-                    Q.DataController.addToObjects(objectsGrid, fish.w, fish.h, fish.loc, fish);
+                    Q.DataController.addToObjects(objectsGrid, fish.loc, fish.w, fish.h, fish);
                     return fish;
                 }
                 return false;
@@ -1728,9 +1719,12 @@ Quintus.GenerateMap = function(Q){
             let allChances = chanceArray.reduce(function(a, b){return a + b;}, 0);
 
             let fishes = [];
-            let tilesets = [waterTiles, bridgeTiles];
+            let tilesets = bridgeTiles.length ? [waterTiles, bridgeTiles] : [waterTiles];
             for(let i = 0; i < numOfFish; i++){
-                fishes.push(spawnOne(tilesets[~~(Math.random() * 2)]));
+                let fish = spawnOne(tilesets[~~(Math.random() * tilesets.length)]);
+                if(fish){
+                    fishes.push(fish);
+                }
             }
             return fishes;
         },
@@ -1793,6 +1787,13 @@ Quintus.GenerateMap = function(Q){
                     let npc = Q.MapGen.generateNPC(character, chunk.loc);
                     npc.objType = "NPC";
                     objects.push(npc);
+                }   
+            }
+            if(chunk.spawnFurniture){
+                for(let j = 0; j < chunk.spawnFurniture.length; j++){
+                    let item = chunk.spawnFurniture[j];
+                    let itemData = Q.MapGen.generateObject(item, chunk.loc);
+                    objects.push(itemData);
                 }   
             }
             if(chunk.spawnItem){
@@ -1886,7 +1887,7 @@ Quintus.GenerateMap = function(Q){
                     let signSpawn = chunk.sign[i];
                     let sign = {loc: [chunk.loc[0] + signSpawn[0], chunk.loc[1] + signSpawn[1]], objType: "Sign", dungeon: chunk, signType: signSpawn[2]};
                     objects.push(sign);
-                    groundLayer2[ladder.loc[1]][ladder.loc[0]] = signSpawn[3];
+                    groundLayer2[sign.loc[1]][sign.loc[0]] = signSpawn[3];
                 }
             }
         },

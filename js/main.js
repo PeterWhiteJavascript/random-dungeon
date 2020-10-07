@@ -26,7 +26,7 @@ var fileKeys = Object.keys(GDATA);
 
 let SEED = Math.random();
 console.log("This game is running off of initial seed " + SEED + ".");
-//Math.seedrandom(0.20276688479359217);
+//Math.seedrandom(0.52339);
 //Math.seedrandom(0.9520442834654275);
 
 
@@ -70,7 +70,7 @@ Q.load(toLoad.join(","),function(){
     
     Q.DataController.worlds.push(startWorld);
     
-    //startWorld.playerSpawn = [16, 15];
+   // startWorld.playerSpawn = [57, 78];
     Q.DataController.travelToWorld(startWorld);
     
     Q.stageScene("hud", 1);

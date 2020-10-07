@@ -952,7 +952,6 @@ Quintus.Stages = function(Q){
             sheet: "tiles",
             z: 0
         });
-        console.log(data.map.ground1)
         stage.insert(tileLayer);
         let tileLayer2 = new Q.TileLayer({
             tiles: data.map.ground2,
@@ -979,11 +978,12 @@ Quintus.Stages = function(Q){
                 animateTiles(river, stage.animatedTiles.fish, tileLayer2, stage, [27, 28, 29, 30], [27, 28, 29, 30], 10);
             }
             let lake = data.chunks.find(function(chunk){return chunk.type === "lake";});
+            
             if(lake){
                 //Animate the water
-                animateTiles(river, stage.animatedTiles.water, tileLayer, stage, 88, [47, 48, 49, 50, 51, 52], 20);
+                animateTiles(lake, stage.animatedTiles.water, tileLayer, stage, 88, [47, 48, 49, 50, 51, 52], 20);
                 //Animate the fishes
-                animateTiles(river, stage.animatedTiles.fish, tileLayer2, stage, 27, [27, 28, 29, 30], 10);
+                animateTiles(lake, stage.animatedTiles.fish, tileLayer2, stage, 27, [27, 28, 29, 30], 10);
             }
             
             let town = data.chunks.find(function(chunk){return chunk.type === "town";});
@@ -1081,11 +1081,15 @@ Quintus.Stages = function(Q){
     Q.scene("fishing", function(stage){
         let rod = stage.options.rod;
         let fish = stage.options.fish;
+        if(!fish){
+            Q.stage(0).pause();
+            Q.stageScene("dialogue", 2, {dialogue:["There's no fish for some reason..."]});
+            return;
+        }
         let fishFrame = fish.group === "Salmon" ? 14 : fish.group === "Trout" ? 13 : 15;
         let mainBoxWidth = 400;
         let barWidth = 95;
         let percentage = barWidth / 100;
-        
         //Figure out how much damage is dealt in terms of percentage of max health.
         let fishMaxHealth = fish.health;
         let healthPercent = percentage * fishMaxHealth;
@@ -1132,7 +1136,6 @@ Quintus.Stages = function(Q){
             hp: healthPercent,
             esc: escPercent
         };
-        
         let barAnimSpeed = 0.15;
         rod.levelData.damage = 1;
         stage.on("step", function(){
@@ -1140,13 +1143,17 @@ Quintus.Stages = function(Q){
                 let fishItem = Q.MapGen.generateObject({tile: fishFrame});
                 fishItem.quality = Q.MapGen.generateItemQuality(Q.CharacterController.party[0].special["fishQuality"], Q.CharacterController.party[0].special.consistency);
                 Q.Inventory.pickUp(fishItem);
-                Q.MapGen.removeFish(fish);
+                Q.DataController.removeObjectFromMap(fish, Q.DataController.currentWorld.map.objects, Q.DataController.currentWorld.map.objectsGrid);
+                Q.DataController.removeFromAnimatedTiles("fish", fish.loc);
+                Q.DataController.removeObjectFromTileLayers(fish, [Q.stage(0).lists.TileLayer[1], Q.stage(0).lists.TileLayer[2]]);
                 let randWeight = ((Math.random() * (fish.weight[1] - fish.weight[0])) + fish.weight[0]).toFixed(2);
                 Q.stage(0).pause();
                 Q.stageScene("dialogue", 2, {dialogue:["Caught a " + randWeight + "kg " + fish.name + " !"]});
             } else if(fishState.esc <= 0 ){
                 Q.AudioController.playSound("throw-item.mp3");
-                Q.MapGen.removeFish(fish);
+                Q.DataController.removeObjectFromMap(fish, Q.DataController.currentWorld.map.objects, Q.DataController.currentWorld.map.objectsGrid);
+                Q.DataController.removeFromAnimatedTiles("fish", fish.loc);
+                Q.DataController.removeObjectFromTileLayers(fish, [Q.stage(0).lists.TileLayer[1], Q.stage(0).lists.TileLayer[2]]);
                 Q.stage(0).pause();
                 Q.stageScene("dialogue", 2, {dialogue:["The " + fish.name + " got away..."]});
             }
@@ -1161,6 +1168,8 @@ Quintus.Stages = function(Q){
             }
             if(Q.inputs["interact"]){
                 if(!hitLine.p.interactedThisInterval){
+                    //Increase speed
+                    hitLine.p.speed += Math.random();
                     //If the bar is within the range of this frame and last frame.
                     let hit1 = hitLine.p.x - hitLine.p.speed * hitLine.p.direction;
                     let hit2 = hitLine.p.x + hitLine.p.speed * hitLine.p.direction;
@@ -1180,6 +1189,8 @@ Quintus.Stages = function(Q){
                     } 
                     //If we hit outside of the box
                     else {
+                        //Decrease speed
+                        hitLine.p.speed -= Math.random();
                         fishState.esc -= rod.levelData.speed * percentage;
                         let escPercentValue = fishState.esc / escPercent * percentage * escBottomBar.p.w;
                         escTopBar.animate({w: keepWithinBounds(escPercentValue, 0, escBottomBar.p.w)}, barAnimSpeed, Q.Easing.Quadratic.InOut);

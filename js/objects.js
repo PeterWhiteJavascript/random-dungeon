@@ -297,7 +297,7 @@ Quintus.Objects = function(Q){
         //Adds to the passed in objectsGrid (matrix)
         addToObjects:function(map, loc, w, h, object){
             if(!loc) return;
-            for( let i = 0; i < h; i++){
+            for(let i = 0; i < h; i++){
                 for( let j = 0; j < w; j++){
                     map[loc[1] + i][loc[0] + j] = object;
                 }
@@ -310,11 +310,10 @@ Quintus.Objects = function(Q){
             objLayer.p.tiles[oldLoc[1]][oldLoc[0]] = 0;
             oldLoc = newLoc;
         },
-        removeObjectFromMap: function(item, objects, objectGrid, tileLayer){
+        removeObjectFromMap: function(item, objects, objectGrid){
             let startLoc = item.loc;
             for( let i = 0; i < item.h; i++){
                 for(let j = 0; j < item.w; j++){
-                    if(tileLayer) tileLayer.setTile(startLoc[0] + i, startLoc[1] + j, 0);
                     objectGrid[startLoc[1] + i][startLoc[0] + j] = 0;
                 }   
             }
@@ -324,6 +323,19 @@ Quintus.Objects = function(Q){
                     objects.splice(i, 1);
                     return;
                 };
+            }
+        },
+        removeObjectFromTileLayers: function(item, tileLayers){
+            let startLoc = item.loc;
+            for( let i = 0; i < item.h; i++){
+                for(let j = 0; j < item.w; j++){
+                    if(!Array.isArray(tileLayers)){
+                        tileLayers = [tileLayers];
+                    }
+                    tileLayers.forEach(function(tileLayer){
+                        tileLayer.setTile(startLoc[0] + i, startLoc[1] + j, 0);
+                    });
+                }   
             }
         },
         addObjectToMap:function (item, loc, objects, tileLayer, objectsGrid){
@@ -467,7 +479,8 @@ Quintus.Objects = function(Q){
             }
         },
         updateFish: function(time){
-            if(time[1] === 2 || time[1] === 5){
+            //if(time[1] === 2 || time[1] === 5){
+            if(time[1] === 30){
                 Q.MapGen.updateFishes(Q.DataController.currentWorld);
             }
         },
@@ -479,16 +492,15 @@ Quintus.Objects = function(Q){
         },
         removeFromAnimatedTiles: function(category, loc){
             let stage = Q.stage(0);
-            for(let i = stage.animatedTiles[category].length - 1; i >= 0; i--){
+            for(let i = 0; i < stage.animatedTiles[category].length; i++){
                 if(stage.animatedTiles[category][i][0] === loc[0] && stage.animatedTiles[category][i][1] === loc[1]){
                     stage.animatedTiles[category].splice(i, 1);
-                    break;
+                    return;
                 }
             }
         },
         startDay: function(world){
             console.log(world)
-            
             //TODO: Figure out the temperature based on the time of day and season.
             world.temperature = 9;
             
@@ -523,7 +535,7 @@ Quintus.Objects = function(Q){
                         let groundTile = Q.getTile(ground[object.loc[1]][object.loc[0]]);
                         if(groundTile.type === "seedsInWateredSoil" || groundTile.type === "wateredSoil"){
                             ground[object.loc[1]][object.loc[0]] = object.tilled;
-                            object.currentDay += 5;
+                            object.currentDay += 1;
                             let tileIdx = -1;
                             let idxTracker = 0;
                             for(let j = 0; j < object.days.length;j++){
@@ -544,8 +556,9 @@ Quintus.Objects = function(Q){
                     } else if(object.type === "dungeon"){
                         updateMap(object);
                         updateMap(object.bottom);
-                    } else if(objects[i].animal === "Fish"){
-                        Q.MapGen.removeFish(world.map, object);
+                    } else if(object.animal === "Fish"){
+                        Q.DataController.removeObjectFromMap(object, world.map.objects, world.map.objectsGrid);
+                        ground2[object.loc[1]][object.loc[0]] = 0;
                     }
                 }
                 for(let i = specGround.length - 1; i >= 0; i--){
@@ -931,7 +944,7 @@ Quintus.Objects = function(Q){
                 }
                 if(!objectsGrid[loc[1]]) return;
                 if(interactWith && interactWith.interact && interactWith.interact.includes(item.name)){
-                    console.log(item, interactWith)
+                    //console.log(item, interactWith)
                     this.trigger("useTool", item);
                     if(item.levelData.damage && interactWith.hp){
                         interactWith.hp -= item.levelData.damage;
@@ -1422,7 +1435,8 @@ Quintus.Objects = function(Q){
         },
         //For processed and handmade items and chests
         replaceItem: function(item, groundLayer, groundLayer2, objects, objectsTileLayer, objectsGrid, replaceItem){
-            Q.DataController.removeObjectFromMap(item, objects, objectsGrid, objectsTileLayer);
+            Q.DataController.removeObjectFromMap(item, objects, objectsGrid);
+            Q.DataController.removeObjectFromTileLayers(item, objectsTileLayer);
             let obj;
             if(replaceItem[0] === "ladder"){
                 obj = Q.MapGen.createObjectData(item.loc, {tile: -1}, {w: 1, h: 1, objType: "Ladder", direction: replaceItem[1]});
@@ -1443,7 +1457,8 @@ Quintus.Objects = function(Q){
             }
         },
         pickUpItemOffGround: function(interactWith, objects, objectsTileLayer, objectsGrid){
-            Q.DataController.removeObjectFromMap(interactWith, objects, objectsGrid, objectsTileLayer);
+            Q.DataController.removeObjectFromMap(interactWith, objects, objectsGrid);
+            Q.DataController.removeObjectFromTileLayers(interactWith, objectsTileLayer);
             Q.Inventory.pickUp(interactWith);
         },
         pickUp: function(item){
@@ -1462,7 +1477,6 @@ Quintus.Objects = function(Q){
             }
         },
         placeItemOnGround:function(loc, objects, objectsTileLayer, objectsGrid, item, quantity){
-            console.log( objects)
             Q.AudioController.playSound("throw-item.mp3");
             let placedItem = Object.assign({}, item);
             placedItem.quantity = quantity || 1;
