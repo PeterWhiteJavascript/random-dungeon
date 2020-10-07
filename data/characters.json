@@ -1,0 +1,47 @@
+{
+    "player-1": {
+        "tilew": 32,
+        "tileh": 32,
+        "sx": 2,
+        "sy": 2,
+        "w": 270,
+        "h": 34,
+        "spacingX": 2,
+        "spacingY": 2
+    },
+    
+    "npc-1": {
+        "tilew": 32,
+        "tileh": 32,
+        "sx": 2,
+        "sy": 70,
+        "w": 270,
+        "h": 34,
+        "spacingX": 2,
+        "spacingY": 2
+    },
+    
+    
+    "enemy-1": {
+        "tilew": 32,
+        "tileh": 32,
+        "sx": 2,
+        "sy": 204,
+        "w": 270,
+        "h": 34,
+        "spacingX": 2,
+        "spacingY": 2
+    },
+    
+    
+    "enemy-3": {
+        "tilew": 32,
+        "tileh": 32,
+        "sx": 2,
+        "sy": 272,
+        "w": 270,
+        "h": 34,
+        "spacingX": 2,
+        "spacingY": 2
+    }
+}

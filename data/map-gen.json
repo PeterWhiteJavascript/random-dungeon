@@ -1,0 +1,2623 @@
+{
+    "levels": {
+        "Farming":{
+            "chunks":[
+                {"type": "farm", "num": 1, "idx": [0]},
+                {"type": "town", "num": 1, "idx": [0]},
+                {"type": "rocks", "num": 1, "idx": [0]},
+                {"type": "river", "num": 1, "idx": [0]},
+                {"type": "dungeon", "num": 1, "idx": [0]}
+            ],
+            "festivals":[
+                ["Crop", [14, 28]],
+                ["Bazaar", [7, 21]]
+            ],
+            "goal":["Win the Crop Festival."],
+            "props":{
+                "level": 1,
+                "mapWidth": 100,
+                "mapHeight": 100,
+                "themeNum": 0
+            }
+        },
+        "Mining": {
+            "chunks":[
+                {"type": "farm", "num": 1, "idx": [0]},
+                {"type": "town", "num": 1, "idx": [0]},
+                {"type": "forest", "num": 1, "idx": [0]},
+                {"type": "river", "num": 1, "idx": [0]},
+                {"type": "dungeon", "num": 1, "idx": [0]},
+                {"type": "rocks", "num": 2, "idx": [0]}
+            ],
+            "festivals":[
+                ["Ore", [14, 28]],
+                ["Bazaar", [7, 21]]
+            ],
+            "goal":["Win the Ore Festival"],
+            "props":{
+                "level": 1,
+                "mapWidth": 70,
+                "mapHeight": 70,
+                "themeNum": 0
+            }
+        },
+        "Cooking": {
+            "chunks":[
+                {"type": "farm", "num": 1, "idx": [0]},
+                {"type": "town", "num": 1, "idx": [0]},
+                {"type": "forage", "num": 2, "idx": [0]},
+                {"type": "forest", "num": 1, "idx": [0]},
+                {"type": "lake", "num": 1, "idx": [0]}
+            ],
+            "festivals":[
+                ["Cooking", [14, 28]],
+                ["Bazaar", [7, 21]]
+            ],
+            "goal":["Win the Cooking Festivals"],
+            "props":{
+                "level": 1,
+                "mapWidth": 70,
+                "mapHeight": 70,
+                "themeNum": 0
+            }
+        },
+        "Restauranteur": {
+            "chunks":[
+                {"type": "farm", "num": 1, "idx": [0]},
+                {"type": "town", "num": 1, "idx": [0]},
+                {"type": "plot", "num": 2, "idx": [0]},
+                {"type": "forage", "num": 2, "idx": [0]},
+                {"type": "forest", "num": 2, "idx": [0]},
+                {"type": "river", "num": 1, "idx": [0]},
+                {"type": "rocks", "num": 1, "idx": [0]}
+            ],
+            "festivals":[
+                ["Cooking", [14]],
+                ["Crop", [28]],
+                ["Bazaar", [7, 21]]
+            ],
+            "goal":["Get higher weekly sales than the competitor restaurant."],
+            "props":{
+                "level": 2,
+                "mapWidth": 90,
+                "mapHeight": 90,
+                "themeNum": 0
+            }
+        },
+        "Labourer": {
+            "chunks":[
+                {"type": "farm", "num": 1, "idx": [0]},
+                {"type": "town", "num": 1, "idx": [0]},
+                {"type": "plot", "num": 2, "idx": [0]},
+                {"type": "forage", "num": 1, "idx": [0]},
+                {"type": "forest", "num": 2, "idx": [0]},
+                {"type": "river", "num": 2, "idx": [0]},
+                {"type": "lake", "num": 1, "idx": [0]},
+                {"type": "rocks", "num": 1, "idx": [0]}
+            ],
+            "festivals":[
+                ["Cooking", [14]],
+                ["Crop", [28]],
+                ["Bazaar", [7, 21]]
+            ],
+            "goal":["Reach the bottom floor of the dungeon."],
+            "props":{
+                "level": 2,
+                "mapWidth": 90,
+                "mapHeight": 90,
+                "themeNum": 0
+            }
+        },
+        "Adventurer":{
+            "chunks":[
+                {"type": "farm", "num": 1, "idx": [0]},
+                {"type": "town", "num": 1, "idx": [0]},
+                {"type": "plot", "num": 1, "idx": [0]},
+                {"type": "forage", "num": 1, "idx": [0]},
+                {"type": "forest", "num":1, "idx": [0]},
+                {"type": "river", "num": 1, "idx": [0]},
+                {"type": "lake", "num": 1, "idx": [0]},
+                {"type": "rocks", "num": 1, "idx": [0]},
+                {"type": "dungeon", "num": 1, "idx": [0]}
+            ],
+            "festivals":[
+                ["Cooking", [14]],
+                ["Crop", [28]],
+                ["Bazaar", [7, 21]]
+            ],
+            "goal":["Help defend against an invasion of monsters (Happens on the 30th. Tied to suspicious people staying after the bazaar.)"],
+            "props":{
+                "level": 2,
+                "mapWidth": 90,
+                "mapHeight": 90,
+                "themeNum": 0
+            }
+        }
+    },
+    "seasons":["Spring", "Summer", "Autumn", "Winter"],
+    "daysInASeason": 30,
+    "borderTiles":{
+        "1": [0, 1],
+        "2": [1, 0],
+        "3": [0, 0],
+        "4": [2, 1],
+        "5": [3, 0],
+        "6": [2, 0],
+        "7": [3, 1],
+        "8": [1, 2],
+        "9": [0, 2],
+        "10": [4, 0],
+        "11": [3, 2],
+        "12": [2, 2],
+        "13": [4, 2],
+        "14": [4, 1],
+        "15": [1, 1]
+    },
+    "themes":[
+        {
+            "floorTile": 21,
+            "roadTile": 42,
+            "dirtTile": 43,
+            "treeTile": 100,
+            "wallTile": 100,
+            "borderTile": 140,
+            "waterTile": 88,
+            "waterBorder": 69,
+            "riverBridgeHorizontal": 130,
+            "riverBridgeVertical": 150,
+            "dungeonGround": 171,
+            "dungeonTile": 169,
+            "dungeonBorder": 132,
+            "dungeonExit": 225,
+            "rocksGround": 211,
+            "rocksTile": 209,
+            "rocksBorder": 212,
+            "rocksCorner": 215,
+            "ladderUp": 77,
+            "ladderDown": 97,
+            "pitfall": 117,
+            "spiceTiles":{
+                "floor":[3, 23],
+                "road":[43],
+                "dirt":[43],
+                "wall":[120],
+                "river":[68],
+                "dungeon": [190],
+                "rocks": [21, 210]
+            },
+            "beautifulPercentage":0.04,
+            "roadForage":{
+                "grid":0,
+                "percentage": 0.01,
+                "items":[
+                    3,
+                    3,
+                    2,
+                    2,
+                    2,
+                    1,
+                    1,
+                    5,
+                    6,
+                    7
+                ]
+            }
+        }
+    ],
+    "forageGrid":[
+        [40, 15, 15, 10, 5, 5, 5, 3, 1, 1],
+        [30, 25, 15, 10, 5, 5, 5, 3, 1, 1]
+    ],
+    "oreItems":[
+        [0, 170, 160, 166, 178, 154, 171, 152],
+        [0, 170, 160, 166, 178, 154, 171, 152]
+    ],
+    "oreGrid":[
+        [75, 10, 5, 2, 2, 2, 2, 2],
+        [75, 10, 5, 2, 2, 2, 2, 2]
+    ],
+    "treasureItems":[
+        [171, 171, 172, 173],
+        [152, 152, 152, 152],
+        [8, 9, 18, 19]
+    ],
+    "treasureGrid":[
+        [40, 25, 20, 15],
+        [40, 25, 20, 15],
+        [40, 25, 20, 15]
+    ],
+    "digItems":[
+        [0, 160, 147, 161, 162]
+    ],
+    "digGrid":[
+        [85, 6, 5, 3, 1]
+    ],
+    "fish":{
+        "groups":[
+            {
+                "name": "Salmon",
+                "value": 50,
+                "restores": [6, 2]
+            },
+            {
+                "name": "Trout",
+                "value": 100,
+                "restores": [3, 1]
+            },
+            {
+                "name": "Bass",
+                "value": 50,
+                "restores": [6, 2]
+            }
+        ],
+        "types":[
+            {
+                "name": "Chinook Salmon",
+                "group": "Salmon",
+                "animal": "Fish",
+                "weight": [10, 61],
+                "rank": 1,
+                "habitat": ["Ocean", "River"],
+                "rarity": 80,
+                "health": 5,
+                "strength": 5,
+                "bulk": 1,
+                "tempMin": 4,
+                "tempMax": 15
+            },
+            {
+                "name": "Chum Salmon",
+                "group": "Salmon",
+                "animal": "Fish",
+                "weight": [5, 19],
+                "rank": 1,
+                "habitat": ["Ocean", "River"],
+                "rarity": 80,
+                "health": 10,
+                "strength": 5,
+                "bulk": 0,
+                "tempMin": 5,
+                "tempMax": 15
+            },
+            {
+                "name": "Coho Salmon",
+                "group": "Salmon",
+                "animal": "Fish",
+                "weight": [3, 16],
+                "rank": 1,
+                "habitat": ["Ocean", "River"],
+                "rarity": 60,
+                "health": 10,
+                "strength": 5,
+                "bulk": 0,
+                "tempMin": 5,
+                "tempMax": 15
+            },
+            {
+                "name": "Pink Salmon",
+                "group": "Salmon",
+                "animal": "Fish",
+                "weight": [2, 6],
+                "rank": 1,
+                "habitat": ["Ocean", "River"],
+                "rarity": 20,
+                "health": 10,
+                "strength": 5,
+                "bulk": 0,
+                "tempMin": 5,
+                "tempMax": 14
+            },
+            
+            {
+                "name": "Rainbow Trout",
+                "group": "Trout",
+                "animal": "Fish",
+                "weight": [1, 21],
+                "rank": 1,
+                "habitat": ["Lake"],
+                "rarity": 10,
+                "health": 10,
+                "strength": 5,
+                "bulk": 0,
+                "tempMin": 6,
+                "tempMax": 17
+            }
+        ]
+    },
+    
+    "tileProps":{
+        "-3":{
+            "type": "placeholder",
+            "cost": 100
+        },
+        "-1":{
+            "type": "placeholder",
+            "cost": 5
+        },
+        "0":{
+            "type": "placeholder",
+            "cost": 9
+        },
+        "2":{
+            "type": "grass",
+            "cost": 4
+        },
+        "3":{
+            "type": "grass",
+            "cost": 1
+        },
+        "9":{
+            "type": "water"
+        },
+        "10":{
+            "type": "water"
+        },
+        "11":{
+            "type": "water"
+        },
+        "21":{
+            "type": "grass",
+            "cost": 1
+        },
+        "22":{
+            "type": "grass",
+            "cost": 4
+        },
+        "23":{
+            "type": "grass",
+            "cost": 1
+        },
+        "25":{
+            "type": "grass",
+            "cost": 1
+        },
+        "27":{
+            "type": "fish"
+        },
+        "28":{
+            "type": "fish"
+        },
+        "29":{
+            "type": "fish"
+        },
+        "30":{
+            "type": "fish"
+        },
+        "40":{
+            "type": "soil",
+            "tilled": 60,
+            "cost": 1
+        },
+        "42":{
+            "type": "road",
+            "cost": 1
+        },
+        "43":{
+            "type": "road",
+            "cost": 2
+        },
+        "47":{
+            "type": "water"
+        },
+        "48":{
+            "type": "water"
+        },
+        "49":{
+            "type": "water"
+        },
+        "50":{
+            "type": "water"
+        },
+        "51":{
+            "type": "water"
+        },
+        "52":{
+            "type": "water"
+        },
+        "60":{
+            "type": "tilledSoil",
+            "watered": 61,
+            "tilled": 60,
+            "soil": 40,
+            "seedsInTilledSoil": 80,
+            "seedsInWateredSoil": 81,
+            "cost": 1
+        },
+        "61":{
+            "type": "wateredSoil",
+            "watered": 61,
+            "tilled": 60,
+            "soil": 40,
+            "seedsInTilledSoil": 80,
+            "seedsInWateredSoil": 81,
+            "cost": 1
+        },
+        "67":{
+            "type": "water"
+        },
+        "68":{
+            "type": "water"
+        },
+        "69":{
+            "type": "water"
+        },
+        "70":{
+            "type": "water"
+        },
+        "71":{
+            "type": "water"
+        },
+        "72":{
+            "type": "water"
+        },
+        "73":{
+            "type": "water"
+        },
+        "77":{
+            "type": "ladder",
+            "cost": 1
+        },
+        "80":{
+            "type": "seedsInTilledSoil",
+            "watered": 61,
+            "tilled": 60,
+            "soil": 40,
+            "seedsInTilledSoil": 80,
+            "seedsInWateredSoil": 81,
+            "cost": 1
+        },
+        "81":{
+            "type": "seedsInWateredSoil",
+            "watered": 61,
+            "tilled": 60,
+            "soil": 40,
+            "seedsInTilledSoil": 80,
+            "seedsInWateredSoil": 81,
+            "cost": 1
+        },
+        "88":{
+            "type": "water"
+        },
+        "89":{
+            "type": "water"
+        },
+        "90":{
+            "type": "water"
+        },
+        "91":{
+            "type": "water"
+        },
+        "92":{
+            "type": "water"
+        },
+        "93":{
+            "type": "water"
+        },
+        "97":{
+            "type": "ladder",
+            "cost": 1
+        },
+        "109":{
+            "type": "water"
+        },
+        "110":{
+            "type": "water"
+        },
+        "111":{
+            "type": "water"
+        },
+        "112":{
+            "type": "water"
+        },
+        "113":{
+            "type": "water"
+        },
+        
+        "117":{
+            "type": "pitfall",
+            "cost": 1
+        },
+        "129":{
+            "type": "bridge",
+            "cost": 1
+        },
+        "130":{
+            "type": "bridge",
+            "cost": 1
+        },
+        "131":{
+            "type": "bridge",
+            "cost": 1
+        },
+        "132":{
+            "type": "dungeon-wall"
+        },
+        "133":{
+            "type": "dungeon-wall"
+        },
+        "134":{
+            "type": "dungeon-wall"
+        },
+        "135":{
+            "type": "dungeon-wall"
+        },
+        "136":{
+            "type": "dungeon-wall"
+        },
+        "149":{
+            "type": "bridge",
+            "cost": 1
+        },
+        "150":{
+            "type": "bridge",
+            "cost": 1
+        },
+        "151":{
+            "type": "bridge",
+            "cost": 1
+        },
+        "152":{
+            "type": "dungeon-wall"
+        },
+        "153":{
+            "type": "dungeon-wall"
+        },
+        "154":{
+            "type": "dungeon-wall"
+        },
+        "155":{
+            "type": "dungeon-wall"
+        },
+        "156":{
+            "type": "dungeon-wall"
+        },
+        "169":{
+            "type": "dungeon-wall"
+        },
+        "170":{
+            "type": "sign"
+        },
+        "171":{
+            "type": "dirt",
+            "cost": 1,
+            "shoveled": 191
+        },
+        "172":{
+            "type": "dungeon-wall"
+        },
+        "173":{
+            "type": "dungeon-wall"
+        },
+        "174":{
+            "type": "dungeon-wall"
+        },
+        "175":{
+            "type": "dungeon-wall"
+        },
+        "176":{
+            "type": "dungeon-wall"
+        },
+        "179":{
+            "type": "dungeon-wall"
+        },
+        "189":{
+            "type": "dirt",
+            "cost": 1,
+            "shoveled": 191
+        },
+        "190":{
+            "type": "dirt",
+            "cost": 1,
+            "shoveled": 191
+        },
+        "191":{
+            "type": "dug-ground",
+            "cost": 1
+        },
+        "209":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "211":{
+            "type": "rock-ground",
+            "cost": 1
+        },
+        "212":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "213":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "214":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "215":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "216":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "221":{
+            "type": "door",
+            "cost": 1
+        },
+        "224":{
+            "type": "door",
+            "cost": 1
+        },
+        "225":{
+            "type": "door",
+            "cost": 1
+        },
+        "232":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "233":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "234":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "235":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "236":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "240":{
+            "type": "floor",
+            "cost": 1
+        },
+        "242":{
+            "type": "concrete",
+            "cost": 1
+        },
+        "252":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "253":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "254":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "255":{
+            "type": "rock-wall",
+            "cost": 1000000
+        },
+        "256":{
+            "type": "rock-wall",
+            "cost": 1000000
+        }
+    },
+    
+    "objectTypes":["equipment", "ore", "material", "forage", "produce", "seed", "tool", "dish"],
+    "objectProps":{
+        "1":{
+            "name": "Pebble",
+            "w": 1,
+            "h": 1,
+            "hp": 1,
+            "type": "forage",
+            "value": 5,
+            "interact": ["Pickup"]
+        },
+        "2":{
+            "name": "Stick",
+            "w": 1,
+            "h": 1,
+            "hp": 1,
+            "type": "forage",
+            "value": 5,
+            "interact": ["Pickup"]
+        },
+        "3":{
+            "name": "Weed",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 1,
+            "interact": ["Pickup"]
+        },
+        "4":{
+            "name": "Weed",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 1,
+            "interact": ["Pickup"]
+        },
+        "5":{
+            "name": "Flower",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "6":{
+            "name": "Flower",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "7":{
+            "name": "Flower",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "8":{
+            "name": "Flower",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "9":{
+            "name": "Flower",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "11":{
+            "name": "Material Stone",
+            "w": 1,
+            "h": 1,
+            "type": "material",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "12":{
+            "name": "Lumber",
+            "w": 1,
+            "h": 1,
+            "type": "material",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "13":{
+            "name": "Trout",
+            "w": 1,
+            "h": 1,
+            "type": "produce",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "14":{
+            "name": "Salmon",
+            "w": 1,
+            "h": 1,
+            "type": "produce",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "15":{
+            "name": "Bass",
+            "w": 1,
+            "h": 1,
+            "type": "produce",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "18":{
+            "name": "Flower-6",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "19":{
+            "name": "Flower-7",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "20":{
+            "name": "Chest",
+            "w": 1,
+            "h": 1,
+            "type": "chest",
+            "interact": ["Open"],
+            "opened": 21
+        },
+        "21":{
+            "name": "Open Chest",
+            "w": 1,
+            "h": 1,
+            "type": "chest"
+        },
+        "22":{
+            "name": "Ore Stone",
+            "w": 1,
+            "h": 1,
+            "hp": 1,
+            "type": "OreStone",
+            "interact": ["Hammer"]
+        },
+        "30":{
+            "name": "Stump",
+            "w": 2,
+            "h": 2,
+            "hp": 6,
+            "interact": ["Axe"],
+            "processed": [12, 5],
+            "handmade": [2, 3]
+        },
+        "32":{
+            "name": "Rock",
+            "w": 2,
+            "h": 2,
+            "hp": 6,
+            "interact": ["Hammer"],
+            "processed": [11, 5],
+            "handmade": [1, 3]
+        },
+        "60":{
+            "name": "Hoe",
+            "w": 1,
+            "h": 1,
+            "type": "tool",
+            "sound": "use-hoe",
+            "value": 2500,
+            "interact": ["Pickup"],
+            "levels":[
+                {
+                    "aoe": 0,
+                    "range": 1,
+                    "energy": 2
+                },
+                {
+                    "aoe": 0,
+                    "range": 2,
+                    "energy": 4
+                },
+                {
+                    "aoe": 1,
+                    "range": 2,
+                    "energy": 5
+                },
+                {
+                    "aoe": 1,
+                    "range": 3,
+                    "energy": 6
+                },
+                {
+                    "aoe": 2,
+                    "range": 3,
+                    "energy": 6
+                }
+            ]
+        },
+        "61" : {
+            "name":"Axe",
+            "w": 1,
+            "h": 1,
+            "type": "tool",
+            "sound": "use-axe",
+            "value": 2500,
+            "interact": ["Pickup"],
+            "levels":[
+                {
+                    "damage": 1,
+                    "energy": 2
+                },
+                {
+                    "damage": 3,
+                    "energy": 3
+                },
+                {
+                    "damage": 6,
+                    "energy": 4
+                },
+                {
+                    "damage": 10,
+                    "energy": 5
+                },
+                {
+                    "damage": 15,
+                    "energy": 6
+                }
+            ]
+        },
+        "62" : {
+            "name":"Hammer",
+            "w": 1,
+            "h": 1,
+            "type": "tool",
+            "sound": "use-hammer",
+            "value": 2500,
+            "interact": ["Pickup"],
+            "levels":[
+                {
+                    "damage": 1,
+                    "energy": 2
+                },
+                {
+                    "damage": 3,
+                    "energy": 3
+                },
+                {
+                    "damage": 6,
+                    "energy": 4
+                },
+                {
+                    "damage": 10,
+                    "energy": 5
+                },
+                {
+                    "damage": 15,
+                    "energy": 6
+                }
+            ]
+        },
+        "63": {
+            "name":"Watering Can",
+            "w": 1,
+            "h": 1,
+            "type": "tool",
+            "value": 1000,
+            "sound": "use-watering-can",
+            "interact": ["Pickup"],
+            "levels":[
+                {
+                    "aoe": 0,
+                    "range": 1,
+                    "capacity": 10,
+                    "energy": 2
+                },
+                {
+                    "aoe": 0,
+                    "range": 2,
+                    "capacity": 25,
+                    "energy": 3
+                },
+                {
+                    "aoe": 1,
+                    "range": 2,
+                    "capacity": 50,
+                    "energy": 4
+                },
+                {
+                    "aoe": 1,
+                    "range": 3,
+                    "capacity": 90,
+                    "energy": 5
+                },
+                {
+                    "aoe": 2,
+                    "range": 3,
+                    "capacity": 135,
+                    "energy": 6
+                }
+            ]
+        },
+        "64": {
+            "name":"Fishing Rod",
+            "w": 1,
+            "h": 1,
+            "type": "tool",
+            "sound": "use-fishing-rod",
+            "value": 3500,
+            "interact": ["Pickup"],
+            "levels":[
+                {
+                    "energy": 3,
+                    "damage": 1,
+                    "speed": 1
+                },
+                {
+                    "energy": 3,
+                    "damage": 2,
+                    "speed": 1
+                    
+                },
+                {
+                    "energy": 2,
+                    "damage": 2,
+                    "speed": 2
+                    
+                },
+                {
+                    "energy": 2,
+                    "damage": 3,
+                    "speed": 2
+                    
+                },
+                {
+                    "energy": 1,
+                    "damage": 3,
+                    "speed": 3
+                }
+            ]
+        },
+        "65":{
+            "name": "Raft",
+            "w": 1,
+            "h": 1,
+            "type": "tool",
+            "sound": "use-hammer",
+            "value": 500,
+            "interact": ["Pickup"],
+            "levels":[
+                {
+                    "speed": 0.5
+                },
+                {
+                    "speed": 0.45
+                },
+                {
+                    "speed": 0.4
+                },
+                {
+                    "speed": 0.35
+                },
+                {
+                    "speed": 0.3
+                }
+            ]
+        },
+        "66":{
+            "name": "Shovel",
+            "w": 1,
+            "h": 1,
+            "type": "tool",
+            "sound": "use-axe",
+            "value": 500,
+            "interact": ["Pickup"],
+            "levels":[
+                {
+                    "aoe": 0,
+                    "range": 1,
+                    "energy": 2
+                },
+                {
+                    "aoe": 0,
+                    "range": 2,
+                    "energy": 4
+                },
+                {
+                    "aoe": 1,
+                    "range": 2,
+                    "energy": 5
+                },
+                {
+                    "aoe": 1,
+                    "range": 3,
+                    "energy": 6
+                },
+                {
+                    "aoe": 2,
+                    "range": 3,
+                    "energy": 6
+                }
+            ]
+        },
+        "70": {
+            "name": "Turnip Stage 1",
+            "w": 1,
+            "h": 1,
+            "type": "plantedCrop"
+        },
+        "80": {
+            "name": "Turnip Stage 2",
+            "w": 1,
+            "h": 1,
+            "type": "plantedCrop"
+        },
+        "100": {
+            "name": "Turnip Seeds",
+            "w": 1,
+            "h": 1,
+            "type": "seed",
+            "value": 10,
+            "interact": ["Pickup"],
+            "produces": 120,
+            "days":[1, 1],
+            "stages":[70, 80]
+        },
+        
+        "101": {
+            "name": "Potato Seeds",
+            "w": 1,
+            "h": 1,
+            "type": "seed",
+            "value": 10,
+            "interact": ["Pickup"],
+            "produces": 121,
+            "days":[2, 1],
+            "stages":[70, 80]
+        },
+        "102": {
+            "name": "Cucumber Seeds",
+            "w": 1,
+            "h": 1,
+            "type": "seed",
+            "value": 10,
+            "interact": ["Pickup"],
+            "produces": 122,
+            "days":[1]
+        },
+        "103": {
+            "name": "Strawberry Seeds",
+            "w": 1,
+            "h": 1,
+            "type": "seed",
+            "value": 10,
+            "interact": ["Pickup"],
+            "produces": 123,
+            "days":[1]
+        },
+        "104": {
+            "name": "Cabbage Seeds",
+            "w": 1,
+            "h": 1,
+            "type": "seed",
+            "value": 10,
+            "interact": ["Pickup"],
+            "produces": 124,
+            "days":[1]
+        },
+        "105": {
+            "name": "Tomato Seeds",
+            "w": 1,
+            "h": 1,
+            "type": "seed",
+            "value": 10,
+            "interact": ["Pickup"],
+            "produces": 125,
+            "days":[1]
+        },
+        "106": {
+            "name": "Corn Seeds",
+            "w": 1,
+            "h": 1,
+            "type": "seed",
+            "value": 10,
+            "interact": ["Pickup"],
+            "produces": 126,
+            "days":[3, 1]
+        },
+        "107": {
+            "name": "Onion Seeds",
+            "w": 1,
+            "h": 1,
+            "type": "seed",
+            "value": 10,
+            "interact": ["Pickup"],
+            "produces": 127,
+            "days":[1]
+        },
+        "108": {
+            "name": "Pumpkin Seeds",
+            "w": 1,
+            "h": 1,
+            "type": "seed",
+            "value": 10,
+            "interact": ["Pickup"],
+            "produces": 128,
+            "days":[2, 1]
+        },
+        "109": {
+            "name": "Pineapple Seeds",
+            "w": 1,
+            "h": 1,
+            "type": "seed",
+            "value": 10,
+            "interact": ["Pickup"],
+            "produces": 129,
+            "days":[2, 2]
+        },
+        "120": {
+            "name": "Turnip",
+            "w": 1,
+            "h": 1,
+            "type": "produce",
+            "edible": [10, 5],
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        
+        "121": {
+            "name": "Potato",
+            "w": 1,
+            "h": 1,
+            "edible": [1, 1],
+            "type": "produce",
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        
+        "122": {
+            "name": "Cucumber",
+            "w": 1,
+            "h": 1,
+            "edible": [1, 1],
+            "type": "produce",
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        
+        "123": {
+            "name": "Strawberry",
+            "w": 1,
+            "h": 1,
+            "edible": [1, 1],
+            "type": "produce",
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        
+        "124": {
+            "name": "Cabbage",
+            "w": 1,
+            "h": 1,
+            "type": "produce",
+            "edible": [5, 3],
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        
+        "125": {
+            "name": "Tomato",
+            "w": 1,
+            "h": 1,
+            "edible": [1, 1],
+            "type": "produce",
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        
+        "126": {
+            "name": "Corn",
+            "w": 1,
+            "h": 1,
+            "edible": [1, 1],
+            "type": "produce",
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        
+        "127": {
+            "name": "Onion",
+            "w": 1,
+            "h": 1,
+            "edible": [1, 1],
+            "type": "produce",
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        
+        "128": {
+            "name": "Pumpkin",
+            "w": 1,
+            "h": 1,
+            "edible": [10, 1],
+            "type": "produce",
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        
+        "129": {
+            "name": "Pineapple",
+            "w": 1,
+            "h": 1,
+            "edible": [5, 1],
+            "type": "produce",
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        
+        
+        "140": {
+            "name": "Blue Heart",
+            "w": 1,
+            "h": 1,
+            "edible": [3, 2],
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "141": {
+            "name": "Green Heart",
+            "w": 1,
+            "h": 1,
+            "edible": [3, 2],
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "142": {
+            "name": "Red Heart",
+            "w": 1,
+            "h": 1,
+            "edible": [3, 2],
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "143": {
+            "name": "Yellow Heart",
+            "w": 1,
+            "h": 1,
+            "edible": [3, 2],
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "144": {
+            "name": "Orange Heart",
+            "w": 1,
+            "h": 1,
+            "edible": [3, 2],
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "145": {
+            "name": "Purple Heart",
+            "w": 1,
+            "h": 1,
+            "edible": [3, 2],
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "146": {
+            "name": "Navy Heart",
+            "w": 1,
+            "h": 1,
+            "edible": [3, 2],
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "147": {
+            "name": "Black Heart",
+            "w": 1,
+            "h": 1,
+            "edible": [3, 2],
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "148": {
+            "name": "White Heart",
+            "w": 1,
+            "h": 1,
+            "edible": [3, 2],
+            "type": "forage",
+            "value": 20,
+            "interact": ["Pickup"]
+        },
+        "150":{
+            "name": "Mythic Stone",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 1500,
+            "interact": ["Pickup"]
+        },
+        
+        "151":{
+            "name": "Fluorite",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 50,
+            "interact": ["Pickup"]
+        },
+        
+        "152":{
+            "name": "Emerald",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        
+        "153":{
+            "name": "Ruby",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 75,
+            "interact": ["Pickup"]
+        },
+        "154":{
+            "name": "Topaz",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 50,
+            "interact": ["Pickup"]
+        },
+        "155":{
+            "name": "Peridot",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 75,
+            "interact": ["Pickup"]
+        },
+        "156":{
+            "name": "Green Stone",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 25,
+            "interact": ["Pickup"]
+        },
+        "157":{
+            "name": "Blue Stone",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 40,
+            "interact": ["Pickup"]
+        },
+        "158":{
+            "name": "Brown Stone",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 60,
+            "interact": ["Pickup"]
+        },
+        "159":{
+            "name": "Orange Stone",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 85,
+            "interact": ["Pickup"]
+        },
+        
+        
+        "160": {
+            "name": "Small Coin",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 10,
+            "interact": ["Pickup"]
+        },
+        "161": {
+            "name": "Bronze Coin",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 50,
+            "interact": ["Pickup"]
+        },
+        "162": {
+            "name": "Silver Coin",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 100,
+            "interact": ["Pickup"]
+        },
+        "163": {
+            "name": "Gold Coin",
+            "w": 1,
+            "h": 1,
+            "type": "forage",
+            "value": 1000,
+            "interact": ["Pickup"]
+        },
+        "164":{
+            "name": "Alexandrite",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 2000,
+            "interact": ["Pickup"]
+        },
+        "165":{
+            "name": "Green Alexandrite",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 5000,
+            "interact": ["Pickup"]
+        },
+        "166":{
+            "name": "Agate",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 25,
+            "interact": ["Pickup"]
+        },
+        "167":{
+            "name": "Amethyst",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 50,
+            "interact": ["Pickup"]
+        },
+        "168":{
+            "name": "Diamond",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 1000,
+            "interact": ["Pickup"]
+        },
+        "169":{
+            "name": "Treasure",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 3000,
+            "interact": ["Pickup"]
+        },
+        "170": {
+            "name": "Trash Ore",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 1,
+            "interact": ["Pickup"]
+        },
+        "171": {
+            "name": "Bronze Ore",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 50,
+            "interact": ["Pickup"]
+        },
+        "172": {
+            "name": "Silver Ore",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 125,
+            "interact": ["Pickup"]
+        },
+        "173": {
+            "name": "Gold Ore",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 250,
+            "interact": ["Pickup"]
+        },
+        "174": {
+            "name": "Mythril Ore",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 500,
+            "interact": ["Pickup"]
+        },
+        "175": {
+            "name": "Orichalcum",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 750,
+            "interact": ["Pickup"]
+        },
+        "176": {
+            "name": "Adamantite",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 75,
+            "interact": ["Pickup"]
+        },
+        "177": {
+            "name": "Moonstone",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 25,
+            "interact": ["Pickup"]
+        },
+        "178": {
+            "name": "Sandrose",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 40,
+            "interact": ["Pickup"]
+        },
+        "179": {
+            "name": "Pink Diamond",
+            "w": 1,
+            "h": 1,
+            "type": "ore",
+            "value": 2500,
+            "interact": ["Pickup"]
+        },
+        "180": {
+            "name": "Book Shelf",
+            "w": 2,
+            "h": 2,
+            "type": "furniture",
+            "interact": ["Talk"]
+        },
+        "185":{
+            "name": "Cheese Maker",
+            "w": 1,
+            "h": 1,
+            "type": "furniture",
+            "interact": ["Talk"]
+        },
+        "186":{
+            "name": "Yogurt Maker",
+            "w": 1,
+            "h": 1,
+            "type": "furniture",
+            "interact": ["Talk"]
+        },
+        "187":{
+            "name": "Bed",
+            "w": 1,
+            "h": 2,
+            "type": "furniture",
+            "interact": ["Talk"]
+        },
+        "195":{
+            "name": "Mayonnaise Maker",
+            "w": 1,
+            "h": 1,
+            "type": "furniture",
+            "interact": ["Talk"]
+        },
+        "196":{
+            "name": "Butter Maker",
+            "w": 1,
+            "h": 1,
+            "type": "furniture",
+            "interact": ["Talk"]
+        }
+        
+    },
+    "npcProps":{
+        "lake-fanatic":{
+            "speech":[
+                {
+                    "dialogue":["Let me tell you about the lake here in {w@name}.", {"options":[{"text": "Sure", "func": "changeTextFluid", "props":[1]}, {"text": "No Thanks"}]}, "Just tell me if you change your mind!"]
+                },
+                {
+                    "dialogue":[{"func": "getInfo", "props":["lake"]}, {"func": "randomText", "props":[["I really like lakes...", "Go out and explore some lakes!", "I hope you learn to like lakes as much as I do!", "The middle of a lake would be a great place to hide some treasure...", "Did you know you can fish at lakes?"]]},{"func": "changeText", "props": [0]}]
+                }
+            ]
+        },
+        "mayor-1":{
+            "speech":[
+                {
+                    "dialogue":["Welcome to {w@name}!", "I think you'll really like it here.", "If you need tools or seeds, come to the town and buy them!", {"func": "changeText", "props": [1]}]
+                },
+                {
+                    "dialogue":["Did you want to know something?", {"options":[{"text": "Festivals", "func": "changeTextFluid", "props":[2]},{"text": "No Thanks"}]}]
+                },
+                {
+                    "dialogue":[{"func": "getInfo", "props":["festivals"]}, "You should try to make it to the next festival!", {"func": "changeText", "props": [1]}]
+                }
+            ]
+        },
+        "house-guard-1":{
+            "speech":[
+                {
+                    "dialogue":["I have no more to say."]
+                },
+                {
+                    "dialogue":["Hi, do you want to come in?", {"func": "walkTo", "props": [-1, 0]}, {"func": "changeText", "props": [0]}]
+                },
+                {
+                    "dialogue":["Hi, do you want to come in?", {"func": "changeText", "props": [0]}]
+                },
+                {
+                    "dialogue":["Hi, did you want to come in?", "Too bad. I won't let you.", {"func": "changeText", "props": [0]}]
+                }
+            ]
+        },
+        "seed-shop-1":{
+            "speech":[
+                {
+                    "dialogue": ["I sell seeds. Is there something you want?", {"options":[{"text":"Buy", "func":"loadShop", "props":[[100]]}, {"text":"Nothing", "func":"exitMenu"}]}],
+                    "info": ["sell", [100]]
+                }
+            ]
+        },
+        "tool-shop-1":{
+            "speech":[
+                {
+                    "dialogue": ["I sell tools. Is there something you want?", {"options":[{"text":"Buy", "func":"loadShop", "props": [60, 61, 62, 63, 64]}, {"text":"Nothing", "func":"exitMenu"}]}],
+                    "info": ["sell", [60, 61, 62, 63, 64]]
+                }
+            ]
+        },
+        "sell-shop-1":{
+            "speech":[
+                {
+                    "dialogue": ["I'll buy whatever. What have you got for me?", {"options":[{"text":"Sell", "func":"loadSell", "props":[]}, {"text":"Nothing", "func":"exitMenu"}]}]
+                }
+            ]
+        },
+        "hire-char-shop-1":{
+            "props":{
+                "loadHire":[
+                    [
+                        [
+                            {
+                                "gender": "Male",
+                                "sprite" :"npc-1",
+                                "type": ["Miner", "Farmer", "Soldier"],
+                                "level": 1
+                            },
+                            {
+                                "gender": "Female",
+                                "sprite" :"enemy-1",
+                                "type": ["Forager", "Farmer", "Leader"],
+                                "level": 1
+                            }
+                        ],
+                        [
+                            {"func": "changeText", "props": [2]}
+                        ]
+                    ]
+                ]
+            },  
+            "speech":[
+                {
+                    "dialogue": ["My two grandchildren are old enough to work now.", "Would you like to hire them?", {"func":"changeText", "props":[1]}, 
+                        {"options":[{"text":"Take a look", "func":"loadHire", "props": [0]}, {"text":"Nope", "func":"exitMenu"}]}]
+                },
+                {
+                    "dialogue": ["Have you changed your mind about hiring my two grandchildren?", {"options":[{"text":"Take a look", "func":"loadHire", "props": [0]}, {"text":"Nope", "func":"exitMenu"}]}]
+                },
+                {
+                    "dialogue": ["Thanks for taking care of my two grandchildren!"]
+                }
+            ]
+        }
+    },
+    "chunks": {
+        "farm":[
+            {
+                "minDistFromEdge":15,
+                "w": 20,
+                "h": 20,
+                "playerSpawn":[14, 4],
+                "door":[[14, 3, [0]]],
+                "tiles":[
+                    101,101,141,141,141,141,141,141,141,141,141,141,101,101,101,101,101,101,101,101,
+                    101,141,43,43,43,43,141,141,43,43,43,43,141,101,101,101,101,101,101,101,
+                    101,141,43,43,43,43,141,141,43,43,43,43,141,201,202,202,204,101,101,101,
+                    101,141,43,43,43,43,141,141,43,43,43,43,141,221,222,223,224,101,101,101,
+                    22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,101,101,101,
+                    22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,
+                    101,101,101,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,
+                    101,70,72,22,22,22,22,22,121,121,121,22,22,121,121,121,22,22,101,101,
+                    101,110,112,22,22,22,22,4,141,141,141,22,22,141,141,141,22,22,101,101,
+                    101,101,101,22,22,22,22,141,41,41,41,22,22,41,41,41,141,22,101,101,
+                    101,101,41,22,22,22,22,141,41,41,41,22,22,41,41,41,141,22,101,101,
+                    101,101,41,22,22,22,22,141,41,41,41,22,22,41,41,41,141,22,101,101,
+                    101,101,41,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,101,101,
+                    101,101,101,41,41,41,22,141,41,41,41,22,22,41,41,41,141,22,101,101,
+                    101,101,101,101,101,101,22,141,41,41,41,22,22,41,41,41,141,22,101,101,
+                    101,101,101,101,101,101,22,141,41,41,41,22,22,41,41,41,141,22,101,101,
+                    101,101,101,101,101,101,22,22,141,141,141,22,22,141,141,141,22,22,101,101,
+                    101,101,101,101,101,101,22,22,22,22,22,22,22,22,22,22,22,22,101,101,
+                    101,101,101,101,101,101,22,22,101,101,101,101,101,101,101,101,101,101,101,101,
+                    101,101,101,101,101,101,22,22,101,101,101,101,101,101,101,101,101,101,101,101
+                ],
+                "barn":[2, 1],
+                "chickenCoop":[8, 1],
+                
+                "spawnObject":[
+                    
+                ],
+                "interior":[
+                    {
+                        "playerSpawn":[7, 7],
+                        "w":12,
+                        "h": 8,
+                        "tiles":[
+                            242,242,242,242,242,242,242,242,242,242,242,242,
+                            141,241,241,241,241,241,241,241,241,241,241,141,
+                            141,241,241,241,241,241,241,241,241,241,241,141,
+                            141,241,241,241,241,241,241,241,241,241,241,141,
+                            141,241,241,241,241,241,241,241,241,241,241,141,
+                            141,241,241,241,241,241,241,241,241,241,241,141,
+                            141,241,241,241,241,241,241,241,241,241,241,141,
+                            141,141,141,141,141,141,141,241,141,141,141,141
+                        ],
+                        "spawnFurniture":[
+                            {
+                                "tile": 180,
+                                "loc": [3, 0]
+                            },
+                            
+                            {
+                                "tile": 187,
+                                "loc": [5, 4]
+                            }
+                        ]
+                    }
+                ]
+                
+            }
+        ],
+        "town":[
+            {
+                "minDistFromEdge":1,
+                "minDistFromFarm": 10,
+                "pathThickness": 2,
+                "w": 40,
+                "h": 20,
+                "door":[[12, 3, [0]], [16, 13, [1]], [6, 15, [2]]],
+                "tiles":[
+                    101,102,4,22,22,102,102,102,102,22,22,102,102,102,102,102,102,102,102,101,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,
+                    101,122,70,71,72,122,122,122,122,22,22,122,122,122,122,122,122,122,122,101,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,
+                    102,22,90,89,92,3,3,3,3,22,22,201,202,202,204,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,
+                    122,22,90,89,92,22,22,22,22,22,22,221,222,223,224,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,
+                    102,22,130,131,132,22,22,22,22,43,43,43,43,22,22,3,3,102,102,102,102,102,141,141,141,141,141,141,141,141,141,141,141,141,141,141,102,102,102,102,
+                    122,22,90,89,92,22,22,22,4,43,43,43,43,22,22,22,3,122,122,122,122,122,141,43,43,43,43,43,43,43,43,141,43,43,43,141,122,122,122,122,
+                    101,102,110,89,89,72,121,121,101,43,43,101,121,121,22,22,3,3,102,102,102,102,141,241,241,241,43,43,241,241,241,141,241,241,43,141,22,22,102,102,
+                    101,122,22,110,111,112,121,121,43,43,43,43,121,121,22,22,22,3,122,122,122,122,141,43,43,43,43,43,43,43,43,43,43,43,43,141,22,22,122,122,
+                    22,22,22,3,3,3,101,43,43,43,43,43,43,101,24,22,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,22,22,22,22,
+                    22,22,22,22,22,43,43,43,43,70,72,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,22,22,22,22,
+                    22,22,22,22,22,43,43,43,43,110,112,43,43,43,43,43,43,43,102,102,102,102,102,102,3,22,22,22,22,22,43,43,141,141,141,141,70,72,102,102,
+                    22,22,22,22,22,22,101,43,43,43,43,43,43,101,22,22,22,22,122,122,122,122,122,122,3,22,22,22,22,22,43,43,241,43,43,141,90,92,122,122,
+                    102,102,22,22,22,102,121,121,43,43,43,43,121,121,24,201,202,202,204,102,102,102,102,102,3,22,22,22,22,22,43,43,241,43,43,141,90,92,102,102,
+                    122,122,22,22,22,122,121,121,101,43,43,101,121,121,3,221,222,223,224,122,122,122,122,122,3,3,22,22,22,22,43,43,241,43,43,141,90,92,122,122,
+                    102,102,22,22,22,201,202,202,204,43,43,43,43,43,43,43,43,22,3,102,102,102,102,102,102,102,3,22,22,22,43,43,43,43,43,141,90,92,102,102,
+                    122,122,24,22,22,221,222,223,224,43,43,43,43,43,43,43,43,22,3,122,122,122,122,122,122,122,3,3,3,3,43,43,141,141,141,141,90,92,122,122,
+                    101,102,102,22,22,22,43,43,43,43,43,22,22,102,102,102,102,102,102,102,102,102,22,22,70,71,71,71,71,71,71,71,71,71,71,71,89,92,102,102,
+                    101,122,122,22,22,22,43,43,43,43,43,22,4,122,122,122,122,122,122,122,122,122,22,22,110,111,111,111,111,111,111,111,111,111,111,111,111,112,122,122,
+                    101,101,102,102,102,102,102,102,102,22,22,102,102,102,102,101,101,101,101,101,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,
+                    101,101,122,122,122,122,122,122,122,22,22,122,122,122,122,101,101,101,101,101,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122,122
+                ],
+                "spawnItem":[
+                    {
+                        "tile": 20,
+                        "loc": [1, 2],
+                        "treasure": 2
+                    },
+                    {
+                        "tile": 20,
+                        "loc": [22, 16],
+                        "treasure": 2
+                    }
+                ],
+                "interior":[
+                    {
+                        "playerSpawn":[3, 5],
+                        "w":8,
+                        "h": 6,
+                        "tiles":[
+                            242,242,242,242,242,242,242,242,
+                            141,241,241,241,141,241,241,141,
+                            141,141,241,141,101,241,241,141,
+                            141,241,241,241,241,241,241,141,
+                            141,241,241,241,241,241,241,141,
+                            141,141,141,241,241,141,141,141
+                        ],
+                        "spawnCharacter":[
+                            {
+                                "sprite": ["npc-1"],
+                                "loc": [[2, 1]],
+                                "dir": ["down"],
+                                "type": [[["seed-shop-1", [0]]]]
+                            }
+                        ]
+                    },
+                    
+                    {
+                        "playerSpawn":[3, 5],
+                        "w":8,
+                        "h": 6,
+                        "tiles":[
+                            242,242,242,242,242,242,242,242,
+                            141,102,102,102,141,141,141,141,
+                            141,122,122,122,141,241,141,141,
+                            141,241,241,241,241,241,241,141,
+                            141,241,241,241,241,241,241,141,
+                            141,141,141,241,241,141,141,141
+                        ],
+                        "spawnCharacter":[
+                            {
+                                "sprite": ["npc-1"],
+                                "loc": [[5, 2]],
+                                "dir": ["down"],
+                                "type": [[["tool-shop-1", [0]]]]
+                            }
+                        ]
+                    },
+                    
+                    {
+                        "playerSpawn":[3, 5],
+                        "w":8,
+                        "h": 6,
+                        "tiles":[
+                            242,242,242,242,242,242,242,242,
+                            141,102,102,241,241,102,102,141,
+                            141,122,122,241,141,122,122,141,
+                            141,241,241,241,241,241,241,141,
+                            141,241,241,241,241,241,241,141,
+                            141,141,141,241,241,141,141,141
+                        ],
+                        "spawnCharacter":[
+                            {
+                                "sprite": ["npc-1"],
+                                "loc": [[3, 2]],
+                                "dir": ["down"],
+                                "type": [[["sell-shop-1", [0]]]]
+                            }
+                        ]
+                    }
+                ],
+                "spawnCharacter":[
+                    {
+                        "sprite": ["npc-1"],
+                        "loc": [[11, 7], [7, 11]],
+                        "dir": ["down", "up"],
+                        "type": [[["lake-fanatic", [0]]]]
+                    }
+                ]
+            }
+        ],
+        "plot":[
+            {
+                "minDistFromEdge":2,
+                "minDistFromFarm": 2,
+                "maxDistFromFarm": 3,
+                "pathThickness": 1,
+                "w": 5,
+                "h": 5,
+                "tiles":[
+                    22,22,22,22,22,
+                    22,41,41,41,22,
+                    22,41,41,41,22,
+                    22,41,41,41,22,
+                    22,22,22,22,22
+                ]
+            }
+        ],
+        "house":[
+            {
+                "minDistFromEdge":2,
+                "minDistFromFarm": 3,
+                "pathThickness": 1,
+                "w": 5,
+                "h": 3,
+                "tiles":[
+                    121,201,202,204,121,
+                    121,221,222,224,121,
+                    121,26,26,26,121
+                ],
+                "door":[[2, 1, [0]]],
+                "exit":[[2, 2]],
+                "spawnCharacter":[
+                    {
+                        "sprite": ["npc-1", "enemy-1"],
+                        "loc": [[2, 2], [2, 2]],
+                        "dir": ["down", "down"],
+                        "type": [[["house-guard-1", [1, 2]]], [["house-guard-1", [3]]]]
+                    }
+                ],
+                "interior":[
+                    {
+                        "playerSpawn":[3, 5],
+                        "w":8,
+                        "h": 6,
+                        "tiles":[
+                            147,148,148,148,148,148,148,149,
+                            167,25,26,27,102,26,26,169,
+                            167,45,46,47,122,26,26,169,
+                            167,26,26,26,26,26,26,169,
+                            167,26,26,26,26,26,26,169,
+                            187,188,188,26,26,188,188,189
+                        ],
+                        "spawnCharacter":[
+                            {
+                                "sprite": ["npc-1"],
+                                "loc": [[2, 1]],
+                                "dir": ["down"],
+                                "type": [[["seed-shop-1", [0]]],[["seed-shop-1", [0]]]]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "minDistFromEdge":2,
+                "minDistFromFarm": 3,
+                "pathThickness": 1,
+                "w": 15,
+                "h": 8,
+                "door":[[8, 3, [0]]],
+                "tiles":[
+                    101,101,101,101,101,101,101,101,101,101,101,101,101,101,102,
+                    101,101,26,26,26,26,26,26,26,26,26,26,26,26,122,
+                    101,26,26,26,26,102,102,201,202,202,202,202,204,26,102,
+                    101,26,101,101,26,122,122,221,222,203,223,223,224,26,122,
+                    101,26,121,101,26,102,26,26,26,26,26,26,26,26,102,
+                    101,26,26,26,26,122,102,102,3,3,3,3,3,3,122,
+                    26,26,26,101,26,26,122,122,102,102,102,102,102,102,102,
+                    26,26,26,26,26,26,26,26,122,122,122,122,122,122,122
+                ],
+                "interior":[
+                    {
+                        "playerSpawn":[3, 5],
+                        "w":8,
+                        "h": 6,
+                        "tiles":[
+                            147,148,148,148,148,148,148,149,
+                            167,25,26,27,102,26,26,169,
+                            167,45,46,47,122,26,26,169,
+                            167,26,26,26,26,26,26,169,
+                            167,26,26,26,26,26,26,169,
+                            187,188,188,26,26,188,188,189
+                        ],
+                        "spawnCharacter":[
+                            {
+                                "sprite": ["npc-1"],
+                                "loc": [[2, 1]],
+                                "dir": ["down"],
+                                "type": [[["seed-shop-1", [0]]],[["seed-shop-1", [0]]]]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "minDistFromEdge":2,
+                "minDistFromFarm": 3,
+                "pathThickness": 1,
+                "w": 15,
+                "h": 8,
+                "tiles":[
+                    102,201,202,204,102,102,102,101,101,102,102,102,101,101,101,
+                    122,221,222,224,122,122,122,101,101,122,122,122,121,101,121,
+                    101,26,26,26,26,26,26,26,26,26,26,26,26,101,101,
+                    101,26,26,26,26,26,26,26,26,26,26,26,26,101,121,
+                    101,3,3,3,26,26,26,101,101,26,26,26,26,26,26,
+                    101,101,101,101,26,26,26,101,101,26,26,26,26,26,26,
+                    101,101,101,101,101,102,101,101,101,101,101,101,101,101,101,
+                    101,101,101,101,101,122,101,101,101,101,121,101,101,101,101
+                ]
+            }
+        ],
+        "dungeon":[
+            {
+                "minDistFromEdge":1,
+                "minDistFromFarm": 2,
+                "maxDistFromFarm": 6,
+                "pathThickness": 1,
+                "w": 15,
+                "h": 15,
+                "rockFormations": 1,
+                "formationLength": 1000,
+                "interior":[
+                    {
+                        "beautifulPercentage": 0.1,
+                        "themeNum": 0,
+                        "depth": 10,
+                        "floorW": 15,
+                        "floorH": 15,
+                        "rooms": 3,
+                        "level": 1,
+                        "bottom":[
+                            {
+                                "w": 12, 
+                                "h": 10,
+                                "tiles":[
+                                    133,134,134,134,134,134,134,134,134,134,134,135,
+                                    153,170,170,170,170,170,170,170,170,170,170,155,
+                                    153,170,170,174,174,174,174,174,174,170,170,155,
+                                    153,170,155,172,172,172,172,172,172,153,170,155,
+                                    153,170,175,172,172,172,172,172,172,173,170,155,
+                                    153,170,172,172,172,172,172,172,172,172,153,155,
+                                    153,170,155,172,172,172,172,172,172,153,170,155,
+                                    153,170,155,172,172,172,172,172,172,153,170,155,
+                                    153,170,170,170,134,134,134,134,170,170,170,155,
+                                    173,174,174,174,174,174,174,174,174,174,174,175
+                                ],
+                                "tiles2":[
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,78,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0
+                                ],
+                                "spawnItem":[
+                                    {
+                                        "tile": 20,
+                                        "loc": [4, 4],
+                                        "treasure": 0
+                                    }
+                                ],
+                                "ladder": [[8, 7, "up", 77]],
+                                "playerSpawn": [8, 7]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "river":[
+            {
+                "minDistFromFarm": 5,
+                "maxDistFromFarm": 10,
+                "minDistFromTown": 5,
+                "maxDistFromTown": 10,
+                "len": 60,
+                "riverDirection": "horizontal",
+                "riverThickness":3,
+                "pathThickness": 1,
+                "bank": 1,
+                "spawnObject":[
+                    {
+                        "tile": 2,
+                        "min": 1,
+                        "max": 5
+                    },
+                    {
+                        "tile": 1,
+                        "min": 1,
+                        "max": 5
+                    },
+                    {
+                        "tile": 3,
+                        "min": 3,
+                        "max": 9
+                    },
+                    {
+                        "tile": 140,
+                        "min": 1,
+                        "max": 1,
+                        "chance": 0.1
+                    },
+                    {
+                        "tile": 141,
+                        "min": 1,
+                        "max": 1,
+                        "chance": 0.1
+                    },
+                    {
+                        "tile": 142,
+                        "min": 1,
+                        "max": 1,
+                        "chance": 0.1
+                    },
+                    {
+                        "tile": 143,
+                        "min": 1,
+                        "max": 1,
+                        "chance": 0.1
+                    },
+                    {
+                        "tile": 144,
+                        "min": 1,
+                        "max": 1,
+                        "chance": 0.1
+                    },
+                    {
+                        "tile": 145,
+                        "min": 1,
+                        "max": 1,
+                        "chance": 0.1
+                    },
+                    {
+                        "tile": 146,
+                        "min": 1,
+                        "max": 1,
+                        "chance": 0.1
+                    },
+                    {
+                        "tile": 147,
+                        "min": 1,
+                        "max": 1,
+                        "chance": 0.1
+                    },
+                    {
+                        "tile": 148,
+                        "min": 1,
+                        "max": 1,
+                        "chance": 0.1
+                    }
+                ],
+                "spawnFish":{
+                    "min": 10,
+                    "max": 20,
+                    "fish":[0, 1, 2, 3, 4]
+                }
+            },
+            
+            {
+                "len": 20,
+                "riverThickness":2, 
+                "pathThickness": 1,
+                "minDistFromTown": 2,
+                "maxDistFromTown": 40,
+                "bank": 1,
+                "spawnObject":[
+                    {
+                        "tile": 2,
+                        "min": 1,
+                        "max": 5
+                    },
+                    {
+                        "tile": 1,
+                        "min": 1,
+                        "max": 5
+                    },
+                    {
+                        "tile": 3,
+                        "min": 3,
+                        "max": 9
+                    },
+                    {
+                        "tile": 160,
+                        "min": 1,
+                        "max": 1,
+                        "chance": 0.5
+                    }
+                ]
+            }
+        ],
+        "lake":[
+            {
+                "minDistFromEdge":1,
+                "minDistFromFarm": 2,
+                "maxDistFromFarm": 40,
+                "minDistFromTown": 2,
+                "maxDistFromTown": 40,
+                "pathThickness": 1,
+                "w": 30,
+                "h": 30,
+                "spawnObject": [
+                    {
+                        "tile": 3,
+                        "min": 1,
+                        "max": 6
+                    }
+                ],
+                "lakeSize": [4, 4],
+                "lakeBubbles": 10,
+                "island": 0.75,
+                "islandSize": [4, 4],
+                "islandForest":0.1,
+                "islandDungeon": 0.75,
+                "islandDungeonInterior":[
+                    {
+                        "beautifulPercentage": 0.1,
+                        "themeNum": 1,
+                        "depth": 10,
+                        "w": 12, 
+                        "h": 10,
+                        "floorW": 12,
+                        "floorH": 10,
+                        "rooms": 3,
+                        "level": 1,
+                        "tiles":[
+                            133,134,134,134,134,134,134,134,134,134,134,135,
+                            153,170,170,170,170,170,170,170,170,170,170,155,
+                            153,170,170,174,174,174,174,174,174,170,170,155,
+                            153,170,155,172,172,172,172,172,172,153,170,155,
+                            153,170,175,172,172,172,172,172,172,173,170,155,
+                            153,170,172,172,172,172,172,172,172,172,153,155,
+                            153,170,155,172,172,172,172,172,172,153,170,155,
+                            153,170,155,172,172,172,172,172,172,153,170,155,
+                            153,170,170,170,155,172,172,153,170,170,170,155,
+                            173,174,174,174,175,172,172,173,174,174,174,175
+                        ],
+                        "tiles2":[
+                            0,0,0,0,0,0,0,0,0,0,0,0,
+                            0,0,0,0,0,0,0,0,0,0,0,0,
+                            0,0,0,0,0,0,0,0,0,0,0,0,
+                            0,0,0,0,0,0,0,0,171,0,0,0,
+                            0,0,0,0,0,0,0,0,0,0,0,0,
+                            0,0,0,0,0,98,0,0,0,0,0,0,
+                            0,0,0,0,0,0,0,0,0,0,0,0,
+                            0,0,0,0,0,0,0,0,0,0,0,0,
+                            0,0,0,0,0,0,0,0,0,0,0,0,
+                            0,0,0,0,0,0,0,0,0,0,0,0
+                        ],
+                        "playerSpawn":[5, 9],
+                        "ladder": [[5, 5, "down", 97]],
+                        "sign": [[8, 3, "dungeonTracker"]],
+                        "bottom":[
+                            {
+                                "w": 12, 
+                                "h": 10,
+                                "tiles":[
+                                    133,134,134,134,134,134,134,134,134,134,134,135,
+                                    153,170,170,170,170,170,170,170,170,170,170,155,
+                                    153,170,170,174,174,174,174,174,174,170,170,155,
+                                    153,170,155,172,172,172,172,172,172,153,170,155,
+                                    153,170,175,172,172,172,172,172,172,173,170,155,
+                                    153,170,172,172,172,172,172,172,172,172,153,155,
+                                    153,170,155,172,172,172,172,172,172,153,170,155,
+                                    153,170,155,172,172,172,172,172,172,153,170,155,
+                                    153,170,170,170,134,134,134,134,170,170,170,155,
+                                    173,174,174,174,174,174,174,174,174,174,174,175
+                                ],
+                                "tiles2":[
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,78,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0,
+                                    0,0,0,0,0,0,0,0,0,0,0,0
+                                ],
+                                "spawnObject":[
+                                    {
+                                        "tile": 20,
+                                        "loc": [4, 4],
+                                        "treasure": 0
+                                    }
+                                ],
+                                "ladder": [[8, 7, "up", 77]],
+                                "playerSpawn": [8, 7]
+                            }
+                        ]
+                    }
+                ],
+                "islandSpawnObject":[
+                    {
+                        "tile": 2,
+                        "min": 1,
+                        "max": 3,
+                        "chance": 0.5
+                    },
+                    {
+                        "tile": 30,
+                        "min": 2,
+                        "max": 2
+                    }
+                ]
+            }
+        ],
+        "forest":[
+            {
+                "minDistFromEdge":1,
+                "minDistFromFarm": 2,
+                "maxDistFromFarm": 12,
+                "maxDistFromTown": 12,
+                "pathThickness": 1,
+                "spawnObject":[
+                    {
+                        "tile": 2,
+                        "min": 1,
+                        "max": 3
+                    },
+                    {
+                        "tile": 1,
+                        "min": 1,
+                        "max": 3
+                    },
+                    {
+                        "tile": 3,
+                        "min": 1,
+                        "max": 6
+                    },
+                    {
+                        "tile": 30,
+                        "min": 1,
+                        "max": 6
+                    }
+                ],
+                "w": 30,
+                "h": 30,
+                "houses": [
+                    {
+                        "w": 3,
+                        "h": 2,
+                        "tiles": [
+                            201, 202, 204,
+                            221 , 222, 224
+                        ],
+                        "door":[[1, 1, [0]]],
+                        "interior":[
+                            {
+                                "playerSpawn":[3, 5],
+                                "w":8,
+                                "h": 6,
+                                "tiles":[
+                                    242,242,242,242,242,242,242,242,
+                                    141,241,241,241,141,241,241,141,
+                                    141,141,241,141,101,241,241,141,
+                                    141,241,241,241,241,241,241,141,
+                                    141,241,241,241,241,241,241,141,
+                                    141,141,141,241,241,141,141,141
+                                ],
+                                "spawnCharacter": [
+                                        {
+                                        "sprite": ["npc-1"],
+                                        "loc": [[2, 2]],
+                                        "dir": ["down"],
+                                        "type": [[["hire-char-shop-1", [0]]]]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "minDistFromEdge":1,
+                "minDistFromFarm": 2,
+                "pathThickness": 1,
+                "maxDistFromFarm": 8,
+                "maxDistFromTown": 8,
+                "spawnObject":[
+                    {
+                        "tile": 30,
+                        "min": 1,
+                        "max": 1
+                    }
+                ],
+                "w": 10,
+                "h": 10
+            }
+        ],
+        "forage":[
+            {
+                "minDistFromEdge":1,
+                "minDistFromFarm": 2,
+                "maxDistFromFarm": 8,
+                "pathThickness": 1,
+                "spawnObject":[
+                    {
+                        "tile": 2,
+                        "min": 1,
+                        "max": 3
+                    },
+                    {
+                        "tile": 1,
+                        "min": 1,
+                        "max": 3
+                    },
+                    {
+                        "tile": 3,
+                        "min": 1,
+                        "max": 6
+                    },
+                    {
+                        "tile": 30,
+                        "min": 0,
+                        "max": 1
+                    },
+                    {
+                        "tile": 32,
+                        "min": 0,
+                        "max": 1
+                    }
+                ],
+                "w": 10,
+                "h": 10,
+                "tiles":[
+                    101,121,26,26,26,26,26,26,121,101,
+                    121,26,26,26,26,26,26,26,26,121,
+                    26,26,26,26,26,26,26,26,26,26,
+                    26,26,26,26,3,3,26,26,26,26,
+                    26,26,26,3,121,121,3,26,26,26,
+                    26,26,26,3,121,121,3,26,26,26,
+                    26,26,26,26,3,3,26,26,26,26,
+                    26,26,26,26,26,26,26,26,26,26,
+                    121,26,26,26,26,26,26,26,26,121,
+                    101,121,26,26,26,26,26,26,121,101
+                ]
+            },
+            
+            {
+                "minDistFromEdge":1,
+                "minDistFromFarm": 2,
+                "pathThickness": 1,
+                "spawnObject":[
+                    {
+                        "tile": 5,
+                        "min": 0,
+                        "max": 1
+                    },
+                    {
+                        "tile": 6,
+                        "min": 0,
+                        "max": 1
+                    },
+                    {
+                        "tile": 7,
+                        "min": 0,
+                        "max": 1
+                    },
+                    {
+                        "tile": 3,
+                        "min": 1,
+                        "max": 5
+                    }
+                ],
+                "w": 10,
+                "h": 10,
+                "tiles":[
+                    101,101,101,101,26,26,101,101,101,101,
+                    101,102,102,26,26,26,26,102,102,101,
+                    101,122,122,26,26,26,26,122,122,101,
+                    101,26,26,26,26,26,26,26,26,101,
+                    26,26,26,26,26,26,26,26,26,26,
+                    26,26,26,26,26,26,26,26,26,26,
+                    101,26,26,26,26,26,26,26,26,101,
+                    101,102,102,26,26,26,26,102,102,101,
+                    101,122,122,26,26,26,26,122,122,101,
+                    101,101,101,101,26,26,101,101,101,101
+                ]
+            }
+        ],
+        "rocks":[
+            {
+                "minDistFromEdge":1,
+                "minDistFromFarm": 2,
+                "maxDistFromFarm": 6,
+                "pathThickness": 1,
+                "w": 25,
+                "h": 25,
+                "rockFormations": 50,
+                "formationLength": 20,
+                "spawnObject":[
+                    {
+                        "tile": 1,
+                        "min": 10,
+                        "max": 20
+                    },
+                    
+                    {
+                        "tile": 11,
+                        "min": 0,
+                        "max": 1,
+                        "chance": 0.5
+                    },
+                    
+                    {
+                        "tile": 32,
+                        "min": 2,
+                        "max": 3
+                    }
+                    
+                ]
+            }
+        ]
+        
+    }
+}

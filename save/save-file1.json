@@ -1,0 +1,164 @@
+{
+    "options":{
+        "autoRun": true,
+        "musicEnabled": true,
+        "musicVolume": 0.1,
+        "soundEnabled": true,
+        "soundVolume": 0.1,
+        "textSpeed": "Fast",
+        "brightness":100,
+        "autoCombine": false,
+        "menuColor": "#F2A457",
+        "walkThroughWallsCheat": false
+    },
+    "files": [
+        {
+            "money": 5000,
+            "currentDay": 1,
+            "currentSeason": 0,
+            "storage":{
+                "maxItems": 10,
+                "items":[
+                    
+                ]
+            },
+            "worlds":[
+                {
+                    "name": "First Meadow",
+                    "type": "Farming"
+                    
+                }
+            ],
+            "characters":[
+                {
+                    "name": "Saito",
+                    "bag": {
+                        "maxItems": 8,
+                        "items":[
+                            {
+                                "tile": 60, 
+                                "quantity": 1,
+                                "quality": 1,
+                                "hotkey": 1
+                            }, 
+                            {
+                                "tile": 62, 
+                                "quantity": 1,
+                                "quality": 1,
+                                "hotkey": 2
+                            },
+                            {
+                                "tile": 100, 
+                                "quantity": 1,
+                                "quality": 1
+                            },
+                            {
+                                "tile": 66, 
+                                "quantity": 1,
+                                "quality": 1,
+                                "hotkey": 3
+                            }
+                        ]
+                    },
+                    "special": {
+                        "forageQuality": 3,
+                        "seedQuality": 3,
+                        "cookedQuality": 3,
+                        "fishQuality": 3,
+                        "oreQuality": 3,
+                        "materialQuality": 3,
+                        "toolQuality": 3,
+                        "consistency": 0
+                    },
+                    "stats":{
+                        "maxEnergy": 100,
+                        "maxHealth": 100,
+                        "energy": 100,
+                        "health": 100,
+                        "strength": 1,
+                        "bulk": 1,
+                        "speed": 1
+                    },
+                    "proficiency":{
+                        "Axe": 0,
+                        "Hammer": 0,
+                        "Hoe": 0,
+                        "Watering Can": 0,
+                        "Fishing Rod": 0,
+                        "Cooking": 0,
+                        "Shovel": 0,
+                        "Combat": 0
+                    },
+                    "task":{
+                        "type": "Party",
+                        "position": 0
+                    }
+                },
+                {
+                    "name": "Saitoo",
+                    "bag": {
+                        "maxItems": 6,
+                        "items":[
+                            {
+                                "tile": 65, 
+                                "quantity": 1,
+                                "quality": 1
+                            }, 
+                            {
+                                "tile": 63, 
+                                "quantity": 1,
+                                "quality": 1
+                            }
+                        ]
+                    },
+                    "special": {
+                        "forageQuality": 3,
+                        "cookedQuality": 3,
+                        "fishQuality": 3,
+                        "oreQuality": 3,
+                        "materialQuality": 3,
+                        "toolQuality": 3,
+                        "consistency": 0
+                    },
+                    "stats":{
+                        "maxEnergy": 100,
+                        "maxHealth": 100,
+                        "energy": 100,
+                        "health": 100,
+                        "strength": 1,
+                        "bulk": 1,
+                        "speed": 1
+                    },
+                    "proficiency":{
+                        "Axe": 0,
+                        "Hammer": 0,
+                        "Hoe": 0,
+                        "Watering Can": 0,
+                        "Fishing Rod": 0,
+                        "Cooking": 0,
+                        "Shovel": 0,
+                        "Combat": 0
+                    },
+                    "task":{
+                        "type": "Party",
+                        "position": 1
+                    }
+                }
+            ],
+            
+            "achievements":{
+                "Seeds Planted": 0,
+                "Lumber Chopped": 0, 
+                "Rocks Smashed": 0,
+                "Fish Fished": 0,
+                "Enemies Defeated": 0,
+                "Battles Won": 0,
+                "Ground Dug":0,
+                "Watered": 0,
+                "Ground Tilled": 0,
+                "Energy Used": 0,
+                "Damage Taken": 0
+            }
+        }
+    ]
+}

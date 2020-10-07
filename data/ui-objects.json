@@ -1,0 +1,50 @@
+{
+    "hotkey-1":{
+        "tilew":64,
+        "tileh":64,
+        "sx":1,
+        "sy":1,
+        "w":64,
+        "h":64
+    },
+    "hotkey-2":{
+        "tilew":64,
+        "tileh":64,
+        "sx":67,
+        "sy":1,
+        "w":64,
+        "h":64
+    },
+    "hotkey-3":{
+        "tilew":64,
+        "tileh":64,
+        "sx":133,
+        "sy":1,
+        "w":64,
+        "h":64
+    },
+    "cursor":{
+        "tilew":32,
+        "tileh":32,
+        "sx":199,
+        "sy":1,
+        "w":32,
+        "h":32
+    },
+    "weather-bg":{
+        "tilew":97,
+        "tileh":97,
+        "sx":232,
+        "sy":1,
+        "w":97,
+        "h":97
+    },
+    "weather-icons":{
+        "tilew": 65, 
+        "tileh": 65,
+        "sx": 1,
+        "sy": 65,
+        "w": 198,
+        "h": 198
+    }
+}
