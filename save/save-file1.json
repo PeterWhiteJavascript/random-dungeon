@@ -33,7 +33,7 @@
                 {
                     "name": "Saito",
                     "bag": {
-                        "maxItems": 8,
+                        "maxItems": 12,
                         "items":[
                             {
                                 "tile": 60, 
