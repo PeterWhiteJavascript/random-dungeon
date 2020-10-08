@@ -32,7 +32,7 @@ console.log("This game is running off of initial seed " + SEED + ".");
 
 //TEMP: don't load music on every page refresh. Music also won't be loaded unless enabled, so if it's set to off, then loading times while testing will be great.
 delete GDATA["bgm"];
-GDATA.saveFiles["save-file1.json"].options.musicEnabled = false;
+GDATA.saveFiles["save-file1.json"].options.musicEnabled = true;
 
 for(var i=0;i<fileKeys.length;i++){
     var files = GDATA[fileKeys[i]];
