@@ -430,7 +430,7 @@ Quintus.Objects = function(Q){
                     Q.AudioController.playMusic(Q.DataController.currentWorld.music.farm);
                 } else if(door.type === "town" || door.type === "forest"){
                     Q.AudioController.playMusic(Q.DataController.currentWorld.music.town);
-                } else if(door.type === "dungeon"){
+                } else if(door.type === "dungeon" || door.type === "lake"){
                     Q.AudioController.playMusic(Q.DataController.currentWorld.music.dungeon);
                     Q.DataController.currentDungeon = door;
                 }
@@ -500,7 +500,6 @@ Quintus.Objects = function(Q){
             }
         },
         startDay: function(world){
-            console.log(world)
             //TODO: Figure out the temperature based on the time of day and season.
             world.temperature = 9;
             
@@ -553,10 +552,10 @@ Quintus.Objects = function(Q){
                             }
                             object.tile = object.stages[tileIdx];
                         }   
-                    } else if(object.type === "dungeon"){
+                    } else if(object.type === "dungeon" || object.type === "lake"){
                         updateMap(object);
                         updateMap(object.bottom);
-                    } else if(object.animal === "Fish"){
+                    } else if(object.animal === "Fish"){      
                         Q.DataController.removeObjectFromMap(object, world.map.objects, world.map.objectsGrid);
                         ground2[object.loc[1]][object.loc[0]] = 0;
                     }

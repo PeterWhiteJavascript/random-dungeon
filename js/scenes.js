@@ -1000,7 +1000,7 @@ Quintus.Stages = function(Q){
         } 
         //If we're going into an interior, the type will be the chunk type (farm house === "farm", etc...)
         else {
-                console.log(data)
+            //THIS MIGHT BE HANDLED ELSEWHERE ACTUALLY
             if(data.spawnFurniture){
                 
             }

@@ -2386,7 +2386,7 @@
                 "islandDungeonInterior":[
                     {
                         "beautifulPercentage": 0.1,
-                        "themeNum": 1,
+                        "themeNum": 0,
                         "depth": 10,
                         "w": 12, 
                         "h": 10,
@@ -2449,7 +2449,7 @@
                                     0,0,0,0,0,0,0,0,0,0,0,0,
                                     0,0,0,0,0,0,0,0,0,0,0,0
                                 ],
-                                "spawnObject":[
+                                "spawnItem":[
                                     {
                                         "tile": 20,
                                         "loc": [4, 4],

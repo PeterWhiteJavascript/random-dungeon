@@ -891,7 +891,6 @@ Quintus.GenerateMap = function(Q){
                 let dungeonLevel = chunk.level;
                 let oreGrid = GDATA.dataFiles["map-gen.json"].oreGrid[dungeonLevel - 1];
                 let oreItems = GDATA.dataFiles["map-gen.json"].oreItems[dungeonLevel - 1];
-                
                 let tiles = Q.createArray(theme.dungeonTile, w, h);
                 let tiles2 = Q.createArray(0, w, h);
                 let objectsGrid = Q.createArray(0, w, h);
@@ -1625,8 +1624,10 @@ Quintus.GenerateMap = function(Q){
                             //Don't remove it if it's being fished right now.
                             if(!chunkFish[randRemove].beingFished){
                                 Q.DataController.removeObjectFromMap(chunkFish[randRemove], world.map.objects, world.map.objectsGrid);
-                                Q.DataController.removeFromAnimatedTiles("fish", chunkFish[randRemove].loc);
-                                Q.DataController.removeObjectFromTileLayers(chunkFish[randRemove], [stage.lists.TileLayer[1], stage.lists.TileLayer[2]]);
+                                if(!playerInside){
+                                    Q.DataController.removeFromAnimatedTiles("fish", chunkFish[randRemove].loc);
+                                    Q.DataController.removeObjectFromTileLayers(chunkFish[randRemove], [stage.lists.TileLayer[1], stage.lists.TileLayer[2]]);
+                                }
                             }
                         }
                     }
@@ -1841,7 +1842,8 @@ Quintus.GenerateMap = function(Q){
                             playerSpawn: interior.playerSpawn, 
                             helpers: []
                         };
-                        if(chunk.type === "dungeon"){
+                        if(chunk.type === "dungeon" || chunk.type === "lake"){
+                            if(chunk.type === "lake") interior = chunk.islandDungeonInterior[0];
                             let bottom = interior.bottom[~~(Math.random() * interior.bottom.length)];
                             interior.deepestDive = 0;
                             let bottomTiles1 = Q.createArray(0, bottom.w, bottom.h);
@@ -1859,7 +1861,7 @@ Quintus.GenerateMap = function(Q){
                                 },
                                 chunks: Q.MapGen.getRelevantChunkData(bottomGrid), 
                                 playerSpawn: bottom.playerSpawn,
-                                type: "dungeon"
+                                type: chunk.type
                             };
                         }
                     }
